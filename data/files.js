@@ -56,13 +56,41 @@ const FILES={
   "hasil2.jpg",
   "hasil3.jpg"
  ],
+ "project/digital-wardrobe": [
+  "Screenshot 2026-10-30 000300.png",
+  "WhatsApp Image 2026-10-30 at 01.33.34 (2).jpeg"
+ ],
+ "project/financial-modeling-&-feasibility-analysis": [
+  "Screenshot 2026-10-30 204113.png",
+  "Screenshot 2026-10-30 204126.png",
+  "Screenshot 2026-10-30 204148.png",
+  "WhatsApp Image 2026-10-30 at 20.44.51.jpeg"
+ ],
+ "project/gymlog-workout": [
+  "hasil mobile1.jpeg",
+  "hasil mobile2.jpeg",
+  "hasil mobile3.jpeg",
+  "hasil mobile4.jpeg",
+  "hasil mobile5.jpeg"
+ ],
  "project/jukase": [
   "hasil4.jpg",
   "hasil5.jpg"
  ],
+ "project/nightly": [
+  "WhatsApp Image 2026-10-30 at 20.35.02 (1).jpeg",
+  "WhatsApp Image 2026-10-30 at 20.35.02 (2).jpeg",
+  "WhatsApp Image 2026-10-30 at 20.35.03 (1).jpeg",
+  "WhatsApp Image 2026-10-30 at 20.35.03.jpeg"
+ ],
  "project/refurbish-inti": [
   "WhatsApp Image 2026-10-30 at 01.33.33 (1).jpeg",
   "WhatsApp Image 2026-10-30 at 01.33.33.jpeg"
+ ],
+ "project/subscripfy": [
+  "A.jpeg",
+  "WhatsApp Image 2026-10-30 at 20.35.01 (1).jpeg",
+  "WhatsApp Image 2026-10-30 at 20.35.02.jpeg"
  ],
  "project/taf-wedding": [
   "hasil4.jpg",

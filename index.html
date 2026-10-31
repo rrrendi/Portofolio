@@ -93,13 +93,13 @@ h2 span{text-decoration:underline;text-decoration-color:var(--k);text-decoration
 .in .bar i{width:var(--w)}
 .chips{display:flex;flex-wrap:wrap;gap:6px;margin-top:10px}
 .chips span{font:500 .8rem var(--fd);padding:1px 10px;border-radius:99px;border:1.5px solid var(--ink)}
-.pj{text-align:left;padding:0;overflow:hidden;display:block;rotate:var(--r);transition:rotate .2s,translate .2s}
+.pj{text-align:left;padding:0;overflow:hidden;display:flex;flex-direction:column;justify-content:flex-start;align-items:stretch;rotate:var(--r);transition:rotate .2s,translate .2s}.pj>.cv{flex:none}
 .pj:hover{rotate:0deg;translate:0 -4px}
 .pj>div+div{padding:18px 22px}
-.cv{aspect-ratio:16/9;background:var(--k);color:#14142b;display:grid;place-items:center;text-align:center;font:800 1.3rem var(--fd);padding:10px;border-bottom:2.5px solid var(--ink)}
-.cv img{width:100%;height:100%;object-fit:cover}
+.cv{aspect-ratio:16/9;background:var(--k);color:#14142b;display:grid;place-items:center;text-align:center;font:800 1.3rem var(--fd);padding:10px;border-bottom:2.5px solid var(--ink);position:relative;overflow:hidden}
+.cv img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
 .ct{rotate:var(--r)}
-.ct img{width:100%;border:2.5px solid var(--ink);border-radius:8px;margin-bottom:12px;display:block}
+.ct img{width:100%;aspect-ratio:4/3;object-fit:cover;object-position:top;border:2.5px solid var(--ink);border-radius:8px;margin-bottom:12px;display:block}
 .ct a{margin-right:14px;font-weight:700}
 .rv{opacity:0;translate:0 26px;transition:opacity .6s,translate .6s}
 .rv.in{opacity:1;translate:0 0}
@@ -130,6 +130,19 @@ dialog::backdrop{background:#000b}
 .x{float:right;background:var(--li);color:#14142b;border:2.5px solid var(--ink);border-radius:99px;padding:3px 16px;font-weight:800}
 .gal{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:12px}
 figure img{width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:10px;border:2.5px solid var(--ink);display:block}
+.gal img,.ct img{cursor:zoom-in}
+#mb .gal{display:block;columns:200px;column-gap:12px}
+#mb .gal figure{break-inside:avoid;margin:0 0 14px}
+#mb .gal img{aspect-ratio:auto;height:auto;object-fit:contain}
+@media(max-width:560px){#mb .gal{columns:2;column-gap:10px}}
+#lb{width:100vw;max-width:100vw;height:100dvh;max-height:100dvh;background:transparent;border:0;border-radius:0;box-shadow:none;padding:0;color:#fff}
+#lb::backdrop{background:#000}#lb[open]{display:flex}
+#lbw{display:flex;flex-direction:column;align-items:center;justify-content:center;width:100%;height:100%;padding:60px 70px}
+#lbi{max-width:100%;max-height:calc(100dvh - 150px);object-fit:contain;border:2.5px solid #fff;border-radius:10px;background:#000;cursor:default}
+#lbc{margin-top:12px;font:600 .9rem var(--fd);text-align:center}
+#lb .x{position:fixed;top:14px;right:14px;z-index:2}
+.lbn{position:fixed;top:50%;left:12px;translate:0 -50%;width:46px;height:46px;padding:0;border-radius:50%;border:2.5px solid var(--ink);background:var(--li);color:#14142b;font:800 1.7rem/1 var(--fd);z-index:2}.lbn.r{left:auto;right:12px}
+@media(max-width:560px){#lbw{padding:56px 8px 72px}.lbn{top:auto;bottom:14px;translate:0 0}}
 figcaption{font-size:.8rem;color:var(--mu);margin-top:4px;line-height:1.4}
 figure.n img{display:none}
 figure.n::before{content:"Foto belum ditambahkan";display:grid;place-items:center;aspect-ratio:4/3;border:2px dashed var(--ink);border-radius:10px;color:var(--mu);font-size:.85rem}
@@ -223,6 +236,7 @@ dialog{width:100%;max-width:100%;max-height:92vh;max-height:92dvh;margin:auto 0 
 </main>
 <footer><div class="w sm" id="ft"></div></footer>
 <dialog id="dg"><div class="md" id="mb"></div></dialog>
+<dialog id="lb" aria-label="Foto ukuran penuh"><button class="x" id="lbx">Tutup</button><button class="lbn" id="lbp" aria-label="Foto sebelumnya">‹</button><div id="lbw"><img id="lbi" alt=""><div id="lbc"></div></div><button class="lbn r" id="lbn" aria-label="Foto berikutnya">›</button></dialog>
 <script src="data/data.js"></script>
 <script src="data/files.js"></script>
 <script>
@@ -231,9 +245,13 @@ if(typeof D==="undefined"){document.body.innerHTML="<p style='padding:40px'>File
 const CY=D.cy,FM=D.fm,FI=typeof FILES==="undefined"?{}:FILES;
 const F=d=>FI[d]||[],IMG=/\.(jpe?g|png|webp|gif|avif|svg)$/i,DOC=/\.(pdf|docx?|xlsx?|pptx?)$/i;
 const U=(d,f)=>"aset/"+d.split("/").map(encodeURIComponent).join("/")+"/"+encodeURIComponent(f);
-const pretty=s=>{s=s.replace(/^\d+[-_. ]*/,"").replace(/[-_]+/g," ").trim();return s.charAt(0).toUpperCase()+s.slice(1)};
-const cap=f=>{const b=f.replace(/\.[^.]+$/,"");return /^(img|dsc|pxl|mvimg|whatsapp|screenshot|photo|image|foto)(?![a-z])/i.test(b)||/^[\d\s_.-]*$/.test(b)?"":pretty(b)};
+const pretty=s=>{s=s.replace(/^\d+[-_. ]+/,"").replace(/[-_]+/g," ").trim();return s.charAt(0).toUpperCase()+s.slice(1)};
+const cap=f=>{const b=f.replace(/\.[^.]+$/,"");return /^(img|dsc|pxl|mvimg|whatsapp|screenshot|photo|image|foto|cover|sampul)(?![a-z])/i.test(b)||/^[\d\s_.-]*$/.test(b)?"":pretty(b)};
 const PH=d=>F(d).filter(f=>IMG.test(f)).map(f=>[U(d,f),cap(f)]),DC=d=>F(d).filter(f=>DOC.test(f));
+const COV=d=>{const f=F(d).filter(x=>IMG.test(x)),c=f.find(x=>/^(cover|sampul)/i.test(x))||f[0];return c?U(d,c):""};
+const cvh=(d,t)=>{const c=COV(d);return `<span>${t}</span>`+(c?`<img src="${c}" alt="" loading="lazy" onerror="this.remove()">`:"")};
+Object.keys(FI).filter(k=>k.startsWith("project/")).forEach(k=>{const id=k.slice(8);D.project[id]=D.project[id]||{nama:pretty(id)}});
+Object.values(D.project).forEach(p=>{p.tag=p.tag||"Project";p.ket=p.ket||"";p.fitur=p.fitur||[];p.stack=p.stack||[]});
 const yr=s=>/\d{4}$/.test(s)?s.slice(-4):"Kini",nf=n=>n.toFixed(2).replace(".",",");
 const $=s=>document.querySelector(s),$$=s=>[...document.querySelectorAll(s)],dg=$("#dg"),mb=$("#mb"),C=["--li","--pk","--sk","--or"],S=D.status[D.status.mode]||D.status.cari;
 const fig=a=>`<figure><img src="${a[0]}" alt="${a[1]||"Foto"}" loading="lazy" onerror="this.parentNode.classList.add('n')">${a[1]?`<figcaption>${a[1]}</figcaption>`:""}</figure>`;
@@ -244,6 +262,12 @@ const lv=p=>p<50?"Dasar":p<70?"Cukup":p<85?"Baik":"Sangat baik";
 const tg=n=>/Web/.test(n)?"web":/Admin/.test(n)?"admin":/Komputer|IT /.test(n)?"it":"desain";
 const open=h=>{mb.innerHTML=`<button class="x" onclick="dg.close()">Tutup</button>`+h;dg.showModal();dg.scrollTop=0};
 dg.addEventListener("click",e=>{if(e.target===dg)dg.close()});
+const lb=$("#lb");let LG=[],lx=0;
+const lshow=i=>{lx=(i+LG.length)%LG.length;const m=LG[lx],a=m.alt&&m.alt!=="Foto"?m.alt+" · ":"";$("#lbi").src=m.src;$("#lbi").alt=m.alt;$("#lbc").textContent=a+(lx+1)+" dari "+LG.length;$("#lbp").hidden=$("#lbn").hidden=LG.length<2};
+document.addEventListener("click",e=>{const m=e.target.closest(".gal img,.ct img");if(!m||m.closest("figure.n"))return;LG=[...(m.closest(".gal")||$("#sr")).querySelectorAll("img")];lb.showModal();lshow(LG.indexOf(m))});
+$("#lbx").onclick=()=>lb.close();$("#lbp").onclick=()=>lshow(lx-1);$("#lbn").onclick=()=>lshow(lx+1);
+lb.addEventListener("click",e=>{if(e.target===lb||e.target.id==="lbw")lb.close()});
+addEventListener("keydown",e=>{if(!lb.open)return;if(e.key==="ArrowLeft")lshow(lx-1);if(e.key==="ArrowRight")lshow(lx+1)});
 document.title=D.nama+" - "+D.peran;
 $("#nm").textContent=D.nama;
 $("#hb").innerHTML=`<i class="dot"></i>${S.badge}`;
@@ -269,12 +293,12 @@ function showEx(i){const e=D.pengalaman[i];
  (e.projects.length?`<h4>Project yang saya buat</h4>`+e.projects.map(k=>{const p=D.project[k];return `<div class="c" style="margin-bottom:16px;padding:16px"><h3>${p.nama}</h3><p class="sm mu">${p.ket}</p><button class="btn s" style="margin:10px 0 0;padding:4px 16px" onclick="showPj('${k}')">Detail project</button></div>`}).join(""):"")+
  `<h4>Alur kerja dari awal sampai akhir</h4><ol>${e.alur.map(a=>`<li><b>${a[0]}.</b> ${a[1]}</li>`).join("")}</ol>`+gal("pengalaman/"+e.id))}
 function showPj(k){const p=D.project[k];
- open(`<h2 style="--k:var(--pk)"><span>${p.nama}</span></h2><p class="mu sm">${p.tag}</p><p style="margin-top:12px">${p.ket}</p><h4>Fitur utama</h4>${li(p.fitur)}<h4>Teknologi</h4>${chips(p.stack)}${p.link?`<p style="margin-top:16px"><a class="btn" href="${p.link}" target="_blank" rel="noopener">Buka project</a></p>`:""}`+gal("project/"+k))}
+ open(`<h2 style="--k:var(--pk)"><span>${p.nama}</span></h2><p class="mu sm">${p.tag}</p>${p.ket?`<p style="margin-top:12px">${p.ket}</p>`:""}${p.fitur.length?`<h4>Fitur utama</h4>${li(p.fitur)}`:""}${p.stack.length?`<h4>Teknologi</h4>${chips(p.stack)}`:""}${p.link?`<p style="margin-top:16px"><a class="btn" href="${p.link}" target="_blank" rel="noopener">Buka project</a></p>`:""}`+gal("project/"+k))}
 const KC=[["#c6f432","#8ccf00"],["#ff5fa2","#e83e8c"],["#4cc9f0","#1ea7d8"],["#ffb020","#f08a00"]];
 $("#sk").innerHTML=D.skill.map((g,i)=>{const k=KC[i%4];return `<div class="c sk rv" data-tag="${g.tag}" style="--k:${k[0]};--k2:${k[1]}"><h3>${g.grup}</h3><div class="sb">${g.item.map(s=>`<div class="sr"><div><b>${s[0]}</b><em>${lv(s[1])}, ${s[1]}%</em></div><div class="bar" role="img" aria-label="${s[0]} ${s[1]} persen"><i style="--w:${s[1]}%"></i></div></div>`).join("")}</div></div>`}).join("");
-$("#pj").innerHTML=Object.entries(D.project).map(([k,p],i)=>`<button class="c pj rv" data-tag="web" style="--k:var(${C[i%4]});--r:${i%2?1.5:-1.5}deg" onclick="showPj('${k}')"><div class="cv"><img src="${(PH("project/"+k)[0]||[""])[0]}" alt="" onerror="this.replaceWith(document.createTextNode('${p.tag}'))"></div><div><h3>${p.nama}</h3><p class="sm mu" style="margin-top:6px">${p.ket}</p>${chips(p.stack)}</div></button>`).join("");
+$("#pj").innerHTML=Object.entries(D.project).map(([k,p],i)=>`<button class="c pj rv" data-tag="web" style="--k:var(${C[i%4]});--r:${i%2?1.5:-1.5}deg" onclick="showPj('${k}')"><div class="cv">${cvh("project/"+k,p.tag)}</div><div><h3>${p.nama}</h3><p class="sm mu" style="margin-top:6px">${p.ket}</p>${chips(p.stack)}</div></button>`).join("");
 $("#ed").innerHTML=D.pendidikan.map((s,i)=>`<div class="c rv" style="--k:var(${C[(i+1)%4]})"><h3>${s[0]}</h3><p>${s[1]}</p><p class="sm mu">${s[2]}</p></div>`).join("");
-$("#hl").innerHTML=D.hobi.map((h,i)=>{const p=PH("hobi/"+h.id)[0];return `<button class="c pj rv" data-tag="${h.tag.join(" ")}" style="--k:var(${C[i%4]});--r:${i%2?1.5:-1.5}deg" onclick="showHb(${i})"><div class="cv">${p?`<img src="${p[0]}" alt="" onerror="this.replaceWith(document.createTextNode('${h.label}'))">`:h.label}</div><div><h3>${h.judul}</h3><p class="sm mu" style="margin-top:6px">${h.ringkas}</p>${chips(h.skill)}</div></button>`}).join("");
+$("#hl").innerHTML=D.hobi.map((h,i)=>{return `<button class="c pj rv" data-tag="${h.tag.join(" ")}" style="--k:var(${C[i%4]});--r:${i%2?1.5:-1.5}deg" onclick="showHb(${i})"><div class="cv">${cvh("hobi/"+h.id,h.label)}</div><div><h3>${h.judul}</h3><p class="sm mu" style="margin-top:6px">${h.ringkas}</p>${chips(h.skill)}</div></button>`}).join("");
 function showHb(i){const h=D.hobi[i];open(`<h2 style="--k:var(--li)"><span>${h.judul}</span></h2><p class="mu sm">Hobi: ${h.label}</p><p style="margin-top:12px">${h.ringkas}</p><h4>Kenapa ini berguna untuk pekerjaan IT</h4><p>${h.relevan}</p><h4>Prosesnya dari awal sampai akhir</h4><ol>${h.alur.map(a=>`<li><b>${a[0]}.</b> ${a[1]}</li>`).join("")}</ol>`+gal("hobi/"+h.id))}
 {const A=D.ipk,v=A.ips,mx=Math.max(...v),ms=v.map((a,i)=>a===mx?i+1:0).filter(Boolean).join(" dan ");
 $("#ak").innerHTML=`<div class="c rv blk fw" style="--k:var(--sk)"><h3>${A.judul}</h3><p class="sm mu">${A.sub}</p><div class="kp"><div style="--k:var(--li)"><b>${nf(A.ipk)}</b>IPK</div><div style="--k:var(--pk)"><b>${nf(mx)}</b>IPS tertinggi, semester ${ms}</div><div style="--k:var(--or)"><b>${nf(v[v.length-1])}</b>IPS semester ${v.length}</div></div><div id="gr"></div>${A.cerita.map(t=>`<p class="sm" style="margin-top:12px">${t}</p>`).join("")}${gal("akademik","Bukti dari portal akademik")}</div>`}
@@ -290,8 +314,8 @@ new ResizeObserver(chart).observe($("#gr"));
 const medal=()=>{const b=(r1,r2,n=22)=>Array.from({length:n*2},(_,i)=>{const r=i%2?r2:r1,t=Math.PI*i/n;return(100+r*Math.sin(t)).toFixed(1)+","+(100-r*Math.cos(t)).toFixed(1)}).join(" ");
  return `<svg viewBox="0 0 200 240" role="img" aria-label="Medali penghargaan nilai sidang tertinggi" style="width:100%;max-width:190px;display:block;margin:auto"><g stroke="var(--ink)" stroke-width="3" stroke-linejoin="round"><path d="M64 118h44l-16 108-18-18-18 18z" fill="#ff5fa2"/><path d="M92 118h44l8 108-18-18-18 18z" fill="#4cc9f0"/><polygon points="${b(80,70)}" transform="translate(5 5)" fill="var(--ink)"/><polygon points="${b(80,70)}" fill="#ffb020"/><circle cx="100" cy="100" r="55" fill="#c6f432"/></g><circle cx="100" cy="100" r="46" fill="none" stroke="#14142b" stroke-dasharray="3 4" opacity=".5"/><g font-family="Bricolage Grotesque,sans-serif" font-weight="800" fill="#14142b" text-anchor="middle"><text x="100" y="76" font-size="11">SIDANG TA</text><text x="100" y="118" font-size="50">#1</text><text x="100" y="136" font-size="11">TERTINGGI</text></g></svg>`};
 $("#aw").innerHTML=D.penghargaan.map(a=>`<div class="c aw rv blk" style="--k:var(--or)"><div>${medal()}</div><div><span class="bb">Penghargaan</span><h3>${a.judul}</h3><p class="sm mu">${a.pemberi}, ${a.tahun}</p><p style="margin-top:8px">${a.ket}</p>${gal("prestasi/"+a.id,"Foto dan bukti")}</div></div>`).join("");
-{const g={},kk=f=>f.replace(/\.[^.]+$/,"").toLowerCase();F("sertifikat").forEach(f=>{const o=g[kk(f)]=g[kk(f)]||{};IMG.test(f)?o.i=f:DOC.test(f)&&(o.d=f)});
- const L=D.sertifikat.map(s=>({...s,k:s.id.toLowerCase()}));Object.keys(g).forEach(k=>L.some(s=>s.k===k)||L.push({k,nama:pretty(k)}));
+{const g={},kk=f=>f.replace(/(\.(jpe?g|png|webp|gif|avif|svg|pdf|docx?|xlsx?|pptx?))+$/i,"").toLowerCase();F("sertifikat").forEach(f=>{const o=g[kk(f)]=g[kk(f)]||{};o.n=o.n||f.replace(/(\.(jpe?g|png|webp|gif|avif|svg|pdf|docx?|xlsx?|pptx?))+$/i,"");IMG.test(f)?o.i=f:DOC.test(f)&&(o.d=f)});
+ const L=D.sertifikat.map(s=>({...s,k:s.id.toLowerCase()}));Object.keys(g).forEach(k=>L.some(s=>s.k===k)||L.push({k,nama:pretty(g[k].n)}));
  $("#sr").innerHTML=L.map((s,i)=>{const o=g[s.k]||{},a=(h,t)=>`<a href="${h}" target="_blank" rel="noopener">${t}</a>`;return `<div class="c ct rv" style="--k:var(${C[(i+2)%4]});--r:${i%2?1.2:-1.2}deg">${o.i?`<img src="${U("sertifikat",o.i)}" alt="Sertifikat ${s.nama}" loading="lazy">`:`<div class="nf">${o.d?"PDF":"Belum ada file"}</div>`}<h3>${s.nama}</h3><p class="sm mu">${[s.penerbit,[s.tahun,s.berlaku].filter(Boolean).join(". ")].filter(Boolean).join("<br>")}</p><p class="sm" style="margin-top:8px">${o.d?a(U("sertifikat",o.d),"Buka PDF"):o.i?a(U("sertifikat",o.i),"Buka gambar"):""}${s.link?a(s.link,"Cek keaslian"):""}</p></div>`}).join("")}
 const R=D.ringkasan.concat(S.ringkas,[["Email",D.email],["WhatsApp",D.waTampil]]);
 $("#rg").innerHTML=R.map(r=>`<dt>${r[0]}</dt><dd>${r[1]}</dd>`).join("");

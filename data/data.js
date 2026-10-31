@@ -67,13 +67,15 @@ const D={
  // ---------- SKILL: ubah angka (0-100) atau tambah baris ----------
  // tag = web | it | admin | desain (dipakai tombol "Anda sedang mencari apa?")
  skill:[
-  {grup:"Web dan sistem",tag:"web",item:[["HTML dan CSS",70],["PHP dan Laravel",60],["MySQL",60],["JavaScript",45]]},
-  {grup:"Administrasi dan kantor",tag:"admin",item:[["Entry data",85],["Microsoft Office",80]]},
+  {grup:"Web dan sistem",tag:"web",item:[["HTML dan CSS",85],["PHP dan Laravel",75],["MySQL",70],["JavaScript",50]]},
+  {grup:"Administrasi dan kantor",tag:"admin",item:[["Entry data",80],["Microsoft Office",80]]},
   {grup:"Komputer dan IT support",tag:"it",item:[["Troubleshooting dasar PC/laptop",70],["Perakitan PC",70],["Perawatan software dan hardware",70]]},
-  {grup:"Desain dan kreatif",tag:"desain",item:[["Canva",80],["CapCut",70],["Adobe Photoshop",65],["Fotografi",70]]}
+  {grup:"Desain dan kreatif",tag:"desain",item:[["Canva",75],["CapCut",70],["Adobe Photoshop",65],["Fotografi",70]]}
  ],
 
  // ---------- HASIL KERJA / PROJECT. Foto: aset/project/<id>/ ----------
+ // Folder baru di aset/project/ otomatis tampil sebagai kartu (judul dari nama folder). Tambahkan entri di bawah agar ada deskripsi, fitur, dan teknologi.
+ // Foto bernama cover.jpg atau sampul.jpg dipakai sebagai gambar sampul kartu.
  project:{
   "taf-wedding":{nama:"TAF Wedding: pemesanan dan keuangan",tag:"Tugas Akhir",ket:"Sistem web untuk mengelola pemesanan dan laporan keuangan jasa wedding organizer, dengan notifikasi WhatsApp.",fitur:["Form pemesanan bertahap","Portal klien","Laporan keuangan PDF","Notifikasi WhatsApp"],stack:["Laravel","MySQL","Tailwind CSS"],link:""},
   "4g-cake-cookies":{nama:"4G Cake & Cookies: toko online",tag:"Tugas Akhir",ket:"Website toko dan pemesanan untuk usaha kue rumahan, menggantikan pencatatan manual lewat WhatsApp.",fitur:["Katalog, keranjang, checkout","Panel admin pesanan dan pengiriman","Modul keuangan dan laporan"],stack:["Laravel","MySQL","Tailwind CSS"],link:""},
@@ -105,7 +107,7 @@ const D={
  ipk:{judul:"Perkembangan IPK saya",sub:"IPS tiap semester dan IPK kumulatif, sesuai portal akademik.",
   ips:[3.00,3.29,3.86,3.86,3.65,3.83], ipk:3.56,
   catatan:[{dari:1,sampai:2,teks:"Materi terasa mengulang SMK"}], // area yang diberi catatan di grafik
-  cerita:["Di awal kuliah saya jarang masuk kelas karena materinya terasa seperti mengulang pelajaran SMK RPL yang sudah saya kuasai. Itu terlihat pada IPS semester 1 dan 2 (3,00 dan 3,29).","Begitu materinya mulai baru, saya kembali serius: IPS naik menjadi 3,86 di semester 3 dan 4, lalu 3,65 dan 3,83. IPK akhir saya 3,56 (cum laude)."]},
+  cerita:["Di awal kuliah, saya jarang masuk kelas karena materinya terasa seperti mengulang pelajaran SMK RPL yang sudah saya kuasai. Dampaknya terlihat pada IPS semester\u00a01 dan\u00a02, yaitu 3,00 dan\u00a03,29.","Ketika materinya mulai terasa baru, saya kembali serius. IPS naik menjadi 3,86 di semester\u00a03 dan\u00a04, lalu 3,65 di semester\u00a05 dan 3,83 di semester\u00a06. IPK akhir saya 3,56 dengan predikat cum\u00a0laude."]},
  // Foto/sertifikat penghargaan: taruh di aset/prestasi/<id>/
  penghargaan:[{id:"sidang-ta",judul:"Nilai Sidang Tugas Akhir Tertinggi",pemberi:"D3 Teknik Informatika, STMIK Mardira Indonesia",tahun:"2026",
   ket:"Nilai sidang Project Tugas Akhir saya adalah yang tertinggi dalam satu angkatan D3 Teknik Informatika."}],
