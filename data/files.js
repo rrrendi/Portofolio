@@ -52,9 +52,9 @@ const FILES={
   "Formal.png"
  ],
  "project/4g-cake-cookies": [
-  "hasil1.jpg",
-  "hasil2.jpg",
-  "hasil3.jpg"
+  "WhatsApp Image 2026-09-19 at 21.59.58.jpeg",
+  "WhatsApp Image 2026-09-19 fdsfsat 21.59.58.jpeg",
+  "WhatsApp Image 2026-09-19sdfsd at 21.59.58.jpeg"
  ],
  "project/digital-wardrobe": [
   "Screenshot 2026-10-30 000300.png",
@@ -74,14 +74,19 @@ const FILES={
   "hasil mobile5.jpeg"
  ],
  "project/jukase": [
-  "hasil4.jpg",
-  "hasil5.jpg"
+  "WhatsApp Image 2sdf026-09-19 at 21.59.59.jpeg",
+  "WhatsApp Image 2026-09-19 at 2sdfsd1.59.59.jpeg"
  ],
  "project/nightly": [
   "WhatsApp Image 2026-10-30 at 20.35.02 (1).jpeg",
   "WhatsApp Image 2026-10-30 at 20.35.02 (2).jpeg",
   "WhatsApp Image 2026-10-30 at 20.35.03 (1).jpeg",
   "WhatsApp Image 2026-10-30 at 20.35.03.jpeg"
+ ],
+ "project/project-iot": [
+  "WhatsApp Image 2026-11-01 at 01.38.45.jpeg",
+  "WhatsApp Image 2026-11-01 at 01.39.08.jpeg",
+  "WhatsApp Image 2026-11-01 at 01.39.27.jpeg"
  ],
  "project/refurbish-inti": [
   "WhatsApp Image 2026-10-30 at 01.33.33 (1).jpeg",
@@ -93,8 +98,9 @@ const FILES={
   "WhatsApp Image 2026-10-30 at 20.35.02.jpeg"
  ],
  "project/taf-wedding": [
-  "hasil4.jpg",
-  "hasil5.jpg"
+  "1aWhatsApp Image 2026-09-22 at 10.50.11.jpeg",
+  "Screenshot 2026-11-01 022642.png",
+  "WhatsApp Image 2026-09-sdfsd19 at 21.59.59.jpeg"
  ],
  "sertifikat": [
   "html-css.png",
