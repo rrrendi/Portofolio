@@ -58,13 +58,27 @@ const FILES={
  ],
  "project/digital-wardrobe": [
   "Screenshot 2026-10-30 000300.png",
-  "WhatsApp Image 2026-10-30 at 01.33.34 (2).jpeg"
+  "WhatsApp Image 2026-10-30 at 01.33.34 (2).jpeg",
+  "WhatsApp Image 2026-11-01 at 03.04.33 (1).jpeg",
+  "WhatsApp Image 2026-11-01 at 03.13.00.jpeg"
  ],
  "project/financial-modeling-&-feasibility-analysis": [
   "Screenshot 2026-10-30 204113.png",
   "Screenshot 2026-10-30 204126.png",
   "Screenshot 2026-10-30 204148.png",
   "WhatsApp Image 2026-10-30 at 20.44.51.jpeg"
+ ],
+ "project/foodhunt": [
+  "hasil mobile7.jpeg",
+  "WhatsApp Image 2026-11-01 at 03.04.33 (2).jpeg",
+  "WhatsApp Image 2026-11-01 at 03.04.34 (1).jpeg",
+  "WhatsApp Image 2026-11-01 at 03.04.34.jpeg"
+ ],
+ "project/giftwish": [
+  "WhatsApp Image 2026-11-01 at 03.04.34 (2).jpeg",
+  "WhatsApp Image 2026-11-01 at 03.04.35 (1).jpeg",
+  "WhatsApp Image 2026-11-01 at 03.04.35.jpeg",
+  "WhatsApp Image 2026-11-01 at 03.13.02.jpeg"
  ],
  "project/gymlog-workout": [
   "hasil mobile1.jpeg",
@@ -77,11 +91,28 @@ const FILES={
   "WhatsApp Image 2sdf026-09-19 at 21.59.59.jpeg",
   "WhatsApp Image 2026-09-19 at 2sdfsd1.59.59.jpeg"
  ],
+ "project/my-gear": [
+  "1aWhatsApp Image 2026-11-01 at 03.13.01 (2).jpeg",
+  "WhatsApp Image 2026-11-01 at 03.04.32 (1).jpeg",
+  "WhatsApp Image 2026-11-01 at 03.04.32 (2).jpeg",
+  "WhatsApp Image 2026-11-01 at 03.04.33.jpeg"
+ ],
+ "project/my-vanity": [
+  "1aWhatsApp Image 2026-11-01 at 03.13.01 (1).jpeg",
+  "WhatsApp Image 2026-11-01 at 03.04.30 (1).jpeg",
+  "WhatsApp Image 2026-11-01 at 03.04.30.jpeg",
+  "WhatsApp Image 2026-11-01 at 03.04.31.jpeg"
+ ],
  "project/nightly": [
   "WhatsApp Image 2026-10-30 at 20.35.02 (1).jpeg",
   "WhatsApp Image 2026-10-30 at 20.35.02 (2).jpeg",
   "WhatsApp Image 2026-10-30 at 20.35.03 (1).jpeg",
   "WhatsApp Image 2026-10-30 at 20.35.03.jpeg"
+ ],
+ "project/plantify": [
+  "1aWhatsApp Image 2026-11-01 at 03.04.32 (1).jpeg",
+  "1aWhatsApp Image 2026-11-01 at 03.04.32 (2).jpeg",
+  "WhatsApp Image 2026-11-01 at 03.13.01.jpeg"
  ],
  "project/project-iot": [
   "WhatsApp Image 2026-11-01 at 01.38.45.jpeg",
