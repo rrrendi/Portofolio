@@ -126,7 +126,11 @@ const D={
  // id = nama file tanpa ekstensi di aset/sertifikat/ (pasangan .pdf dan .jpg). File tanpa entri di sini tetap tampil, judulnya dari nama file.
  sertifikat:[
   {id:"html-css",nama:"Belajar Dasar-dasar HTML dan CSS",penerbit:"CODEPOLITAN (Kelas Online)",tahun:"27 Mei 2025",berlaku:"Berlaku sampai 27 Mei 2028",link:"https://codepolitan.com/c/LTSWDBA"},
-  {id:"javascript-dasar",nama:"Belajar JavaScript Dasar",penerbit:"CODEPOLITAN (Kelas Online)",tahun:"27 Mei 2025",berlaku:"Berlaku sampai 27 Mei 2028",link:"https://codepolitan.com/c/XEPR9FU"}],
+  {id:"javascript-dasar",nama:"Belajar JavaScript Dasar",penerbit:"CODEPOLITAN (Kelas Online)",tahun:"27 Mei 2025",berlaku:"Berlaku sampai 27 Mei 2028",link:"https://codepolitan.com/c/XEPR9FU"},
+  // Sertifikat yang belum terbit. "catatan" dan "placeholder" hilang otomatis begitu file
+  // aset/sertifikat/sertifikat-magang-pt-inti.jpg (atau .pdf) ditaruh lalu UPDATE.bat dijalankan.
+  {id:"sertifikat-magang-pt-inti",nama:"Sertifikat Magang Web Developer",penerbit:"PT Industri Telekomunikasi Indonesia (Persero)",tahun:"Magang Okt 2025 - Des 2025",berlaku:"",placeholder:"Sertifikat sedang diproses",proyek:"refurbish-inti",
+   catatan:"Pihak PT INTI sudah berjanji akan menerbitkan sertifikat magang saya. Saya sudah beberapa kali menanyakan kabarnya, dan jawabannya masih sama: sertifikat akan dibuatkan, tetapi tim di sana sedang sibuk dan prosesnya belum selesai. Saya memilih menunggu dengan sabar dan tetap sopan. Sementara itu, hasil magang saya bisa dilihat langsung di bagian Project (Website Manajemen Refurbish). Begitu sertifikatnya terbit, akan segera saya pasang di sini."}],
 
  hero:"Lulusan D3 Teknik Informatika dari Bandung, IPK 3,56 (cum laude).",
  cy:["membuat sistem web","merakit dan memperbaiki PC","merapikan dan mengentri data","memotret ribuan siswa","mengelola komunitas online"],
