@@ -117,7 +117,10 @@ const FILES={
  "project/project-iot": [
   "WhatsApp Image 2026-11-01 at 01.38.45.jpeg",
   "WhatsApp Image 2026-11-01 at 01.39.08.jpeg",
-  "WhatsApp Image 2026-11-01 at 01.39.27.jpeg"
+  "WhatsApp Image 2026-11-01 at 01.39.27.jpeg",
+  "WhatsApp Image 2026-11-02 at 00.34.12 (1).jpeg",
+  "WhatsApp Image 2026-11-02 at 00.34.12.jpeg",
+  "WhatsApp Image 2026-11-02 at 00.35.08.jpeg"
  ],
  "project/refurbish-inti": [
   "WhatsApp Image 2026-10-30 at 01.33.33 (1).jpeg",
@@ -140,6 +143,7 @@ const FILES={
   "IMG_20261023_165920.jpg.jpeg",
   "IMG_20261023_170031.jpg.jpeg",
   "IMG_20261023_171538.jpg.jpeg",
-  "javascript-dasar.png"
+  "javascript-dasar.png",
+  "Sertifikat Magang Koperasi Inti_Rendi.jpg"
  ]
 };

@@ -67,9 +67,11 @@ const D={
  // ---------- SKILL: ubah angka (0-100) atau tambah baris ----------
  // tag = web | it | admin | desain (dipakai tombol "Anda sedang mencari apa?")
  skill:[
-  {grup:"Web dan sistem",tag:"web",item:[["HTML dan CSS",85],["PHP dan Laravel",75],["MySQL",70],["JavaScript",50]]},
-  {grup:"Administrasi dan kantor",tag:"admin",item:[["Entry data",80],["Microsoft Office",80]]},
-  {grup:"Komputer dan IT support",tag:"it",item:[["Troubleshooting dasar PC/laptop",70],["Perakitan PC",70],["Perawatan software dan hardware",70]]},
+  {grup:"Web dan sistem",tag:"web",item:[["HTML dan CSS",85],["PHP dan Laravel",75],["MySQL",70],["Tailwind CSS",70],["JavaScript",50]]},
+  {grup:"Mobile (Android)",tag:"web",item:[["Android Studio",70],["Kotlin",65],["Jetpack Compose",65],["Firebase",65]]},
+  {grup:"Perancangan dan alat bantu",tag:"web",item:[["UML dan BPMN",65],["Git dan GitHub",60],["Memakai AI sebagai alat bantu",75]]},
+  {grup:"Komputer dan IT support",tag:"it",item:[["Troubleshooting dasar PC/laptop",70],["Perakitan PC",70],["Perawatan software dan hardware",70],["Menyolder dan perbaikan elektronik",65],["Dasar IoT dan sensor",55]]},
+  {grup:"Administrasi dan kantor",tag:"admin",item:[["Entry data",80],["Microsoft Office",80],["Mengelola toko marketplace",70],["Financial modeling dan kelayakan usaha",60]]},
   {grup:"Desain dan kreatif",tag:"desain",item:[["Canva",75],["CapCut",70],["Adobe Photoshop",65],["Fotografi",70]]}
  ],
 
@@ -132,12 +134,11 @@ const D={
  sertifikat:[
   {id:"html-css",nama:"Belajar Dasar-dasar HTML dan CSS",penerbit:"CODEPOLITAN (Kelas Online)",tahun:"27 Mei 2025",berlaku:"Berlaku sampai 27 Mei 2028",link:"https://codepolitan.com/c/LTSWDBA"},
   {id:"javascript-dasar",nama:"Belajar JavaScript Dasar",penerbit:"CODEPOLITAN (Kelas Online)",tahun:"27 Mei 2025",berlaku:"Berlaku sampai 27 Mei 2028",link:"https://codepolitan.com/c/XEPR9FU"},
-  // Sertifikat yang belum terbit. "catatan" dan "placeholder" hilang otomatis begitu file
-  // aset/sertifikat/sertifikat-magang-pt-inti.jpg (atau .pdf) ditaruh lalu UPDATE.bat dijalankan.
-  {id:"sertifikat-magang-pt-inti",nama:"Sertifikat Magang Web Developer",penerbit:"PT Industri Telekomunikasi Indonesia (Persero)",tahun:"Magang Okt 2025 - Des 2025",berlaku:"",placeholder:"Sertifikat sedang diproses",proyek:"refurbish-inti",
-   catatan:"Pihak PT INTI sudah berjanji akan menerbitkan sertifikat magang saya. Saya sudah beberapa kali menanyakan kabarnya, dan jawabannya masih sama: sertifikat akan dibuatkan, tetapi tim di sana sedang sibuk dan prosesnya belum selesai. Saya memilih menunggu dengan sabar dan tetap sopan. Sementara itu, hasil magang saya bisa dilihat langsung di bagian Project (Website Manajemen Refurbish). Begitu sertifikatnya terbit, akan segera saya pasang di sini."}],
+  // id = nama file di aset/sertifikat/ tanpa ekstensi. Untuk sertifikat yang belum terbit, tambahkan
+  // placeholder:"Sertifikat sedang diproses" dan catatan:"..." (keduanya hilang otomatis saat filenya ditaruh).
+  {id:"Sertifikat Magang Koperasi Inti_Rendi",nama:"Sertifikat Magang Koperasi INTI",penerbit:"PT Industri Telekomunikasi Indonesia (Persero)",tahun:"Magang Okt 2025 - Des 2025",berlaku:""}],
 
  hero:"Lulusan D3 Teknik Informatika dari Bandung, IPK 3,56 (cum laude).",
  cy:["membuat sistem web","merakit dan memperbaiki PC","merapikan dan mengentri data","memotret ribuan siswa","mengelola komunitas online"],
- fm:{semua:"Menampilkan semuanya, dari yang terbaru.",web:"Magang web developer di PT INTI dan 7+ sistem web dengan Laravel dan MySQL. Level skill web saya: cukup.",it:"Bisa merakit PC dan menangani masalah dasar software dan hardware. Lihat bagian Hobi: menyolder speaker, memperbaiki HP teman, dan merakit PC.",admin:"Pernah menjadi office administrator, mengelola marketplace, dan entry data.",desain:"Pernah memotret 1000+ siswa dan membuat desain konten komunitas dengan Canva dan Photoshop."}
+ fm:{semua:"Menampilkan semuanya, dari yang terbaru.",web:"Magang web developer di PT INTI, 7+ sistem web dengan Laravel dan MySQL, serta 9 aplikasi Android dengan Kotlin dan Jetpack Compose.",it:"Bisa merakit PC dan menangani masalah dasar software dan hardware. Lihat bagian Hobi: menyolder speaker, memperbaiki HP teman, dan merakit PC.",admin:"Pernah menjadi office administrator, mengelola marketplace, dan entry data.",desain:"Pernah memotret 1000+ siswa dan membuat desain konten komunitas dengan Canva dan Photoshop."}
 };
