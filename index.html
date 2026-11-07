@@ -8,13 +8,16 @@
     <title>L.M. Rendi Gumilar Saputra - Web Developer & IT Support</title>
     <script>
       // Pasang tema sebelum halaman tampil, supaya tidak berkedip.
+      // Tampilan awal selalu gelap. Pilihan pengunjung (tombol matahari/bulan) diingat untuk kunjungan berikutnya.
       try {
         var t = localStorage.getItem('tema')
-        if (!t) t = matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'
+        if (t !== 'light' && t !== 'dark') t = 'dark'
         document.documentElement.dataset.theme = t
-      } catch (e) {}
+      } catch (e) {
+        document.documentElement.dataset.theme = 'dark'
+      }
     </script>
-    <script defer src="./assets/index-CdyGhiD-.js"></script>
+    <script defer src="./assets/index-DY5kpkYz.js"></script>
   </head>
   <body>
     <div id="root"></div>
